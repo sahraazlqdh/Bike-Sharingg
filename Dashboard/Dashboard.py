@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import altair as alt
 
 # Load data
-day_df = pd.read_csv("day.csv")
-hour_df = pd.read_csv("hour.csv")
+day_df = pd.read_csv("day2.csv")
+hour_df = pd.read_csv("hour2.csv")
 
 # Konversi kolom tanggal ke datetime pada day_df
 day_df['dteday'] = pd.to_datetime(day_df['dteday'])
