@@ -3,9 +3,13 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import altair as alt
 
-# Load data
-day_df = pd.read_csv("Dashboard/day2.csv")
-hour_df = pd.read_csv("Dashboard/hour2.csv")
+# URL dataset
+day_url = "https://raw.githubusercontent.com/sahraazlqdh/bike-sharingg/branch/Dashboard/day2.csv"
+hour_url = "https://raw.githubusercontent.com/sahraazlqdh/bike-sharingg//branch/Dashboard/hour2.csv"
+
+# Load data from URL
+day_df = pd.read_csv(day_url)
+hour_df = pd.read_csv(hour_url)
 
 # Konversi kolom tanggal ke datetime pada day_df
 day_df['dteday'] = pd.to_datetime(day_df['dteday'])
@@ -19,10 +23,13 @@ hour_df['hour'] = hour_df['hr']  # Menyimpan data jam dalam kolom baru jika perl
 # Judul Dashboard
 st.title("Dashboard Penyewaan Sepeda 🚲")
 
+# URL untuk logo
+logo_url = "https://raw.githubusercontent.com/sahraazlqdh/repositorybike-sharingg/branch/Dashboard/logo.png"
+
 # Sidebar - Logo dan Filter
 with st.sidebar:
     st.markdown("# Tren Penyewaan Sepeda")
-    st.image("Dashboard/logo.png", width=200)
+    st.image(logo_url, width=200)
 
     # Pilih rentang tanggal
     min_date = day_df['dteday'].min()
@@ -34,7 +41,6 @@ with st.sidebar:
     max_hour = hour_df['hour'].max()
     start_hour, end_hour = st.slider("Pilih Rentang Jam", min_hour, max_hour, (min_hour, max_hour))
 
-    
     # Pilih jenis pengguna
     user_type = st.selectbox("Pilih Jenis Pengguna", ["Semua", "Casual", "Registered"])
 
