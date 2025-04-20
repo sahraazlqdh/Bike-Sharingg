@@ -24,7 +24,7 @@ hour_df['hour'] = hour_df['hr']  # Menyimpan data jam dalam kolom baru jika perl
 st.title("Dashboard Penyewaan Sepeda 🚲")
 
 # URL untuk logo
-logo_url = "https://raw.githubusercontent.com/sahraazlqdh/repositorybike-sharingg/Dashboard/logo.png"
+logo_url = "https://raw.githubusercontent.com/sahraazlqdh/bike-sharingg/Dashboard/logo.png"
 
 # Sidebar - Logo dan Filter
 with st.sidebar:
