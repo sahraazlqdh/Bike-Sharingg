@@ -22,7 +22,7 @@ st.title("Dashboard Penyewaan Sepeda 🚲")
 # Sidebar - Logo dan Filter
 with st.sidebar:
     st.markdown("# Tren Penyewaan Sepeda")
-    st.image("logo.png", width=200)
+    st.image("Dashboard/logo.png", width=200)
 
     # Pilih rentang tanggal
     min_date = day_df['dteday'].min()
